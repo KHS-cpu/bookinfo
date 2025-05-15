@@ -23,7 +23,7 @@ Internet ──► Route 53 (DNS) ──► EC2 (Harbor + SSL)
                            Private Registry
                                  │
                                  ▼
-                      Kubernetes Cluster
+                      Kubernetes Cluster (Local VM)
                        ├── details
                        ├── ratings
                        ├── reviews (v1, v2, v3)
@@ -58,7 +58,8 @@ Internet ──► Route 53 (DNS) ──► EC2 (Harbor + SSL)
         - (https://github.com/sailinnthu/terraform-acme-tls-aws)
         - You need to install terraform and aws cli and also need to attach Route 53 role to that EC2 and run terraform to create ACME certificate with your desired domain.
         - After running terraform you can see below there will be cert files.
-          <Picture>
+        
+        ![ssl-cert](Pictures/Pictures/ssl-cert.png)
       
       - Ensure port **443** is open in your EC2 security group. And you need EC2 role to access Route 53.
      
@@ -85,7 +86,7 @@ Internet ──► Route 53 (DNS) ──► EC2 (Harbor + SSL)
    ```bash
         sudo ./install.sh
    ```
-- **Create a user to push/pull your images**
+- **Create a user to push/pull your images (Tested on EC2)**
   - Go to https://harbor.(your-domain)
   - Goto Administration>Users>+New User
   - Goto Projects. Create New Project if you want to push your images under one repo
@@ -107,7 +108,7 @@ Internet ──► Route 53 (DNS) ──► EC2 (Harbor + SSL)
      - Should be as below
        <Picture>
 
-- **☸️ Deploy Bookinfo on Kubernetes**
+- **☸️ Deploy Bookinfo on Kubernetes (Tested on Local VM)**
 
   1. Clone this repo
      - ```bash
