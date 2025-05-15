@@ -144,6 +144,21 @@ This is the bookinfo architecture
         Visit `http://localhost:9080`
     - Option 2: Ingress or LoadBalancer
       - Configure an ingress controller or service of type LoadBalancer.
+     
+- **🔐 Security Note**
+  - Avoid hardcoding credentials (e.g., in secrets) for production. Use Kubernetes Secrets with KMS, HashiCorp Vault, or IRSA on EKS for enhanced security.
+ 
+- **🔮 What's Next / Future Improvements**
+  - Automate Harbor Deployment
+    - Fully use Terraform to automate Harbor installation and DNS record creation.
+  - Enable Harbor High Availability (HA)
+    - Deploy Harbor in an HA setup using multiple EC2 instances and an external database like PostgreSQL and Redis.
+  - Integrate with GitHub Actions or Jenkins
+    - Automate the CI/CD pipeline to build and push Docker images to Harbor upon code changes.
+  - Configure Harbor with S3 as Backend Storage
+    - Offload storage from EC2 to S3 for better durability and scalability.
+  - Ingress Controller with HTTPS
+    - Replace direct SSL with NGINX Ingress + Cert-Manager for managed TLS on Kubernetes side.
 
 
 
