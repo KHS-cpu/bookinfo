@@ -16,6 +16,7 @@ This project demonstrates deploying the [Bookinfo microservices application](htt
 
 ## 🏗 Architecture Overview
 
+This is the overview of Harbor and Private Repo
 ```bash
 Internet ──► Route 53 (DNS) ──► EC2 (Harbor + SSL)
                                  │
@@ -29,6 +30,9 @@ Internet ──► Route 53 (DNS) ──► EC2 (Harbor + SSL)
                        ├── reviews (v1, v2, v3)
                        └── productpage
 ```
+This is the bookinfo architecture
+
+![bookinfo](Pictures/bookinfo-architecture.png)
 
 ---
 
@@ -59,7 +63,7 @@ Internet ──► Route 53 (DNS) ──► EC2 (Harbor + SSL)
         - You need to install terraform and aws cli and also need to attach Route 53 role to that EC2 and run terraform to create ACME certificate with your desired domain.
         - After running terraform you can see below there will be cert files.
         
-        ![ssl-cert](Pictures/Pictures/ssl-cert.png)
+        ![ssl-cert](Pictures/ssl-cert.png)
       
       - Ensure port **443** is open in your EC2 security group. And you need EC2 role to access Route 53.
      
@@ -90,7 +94,8 @@ Internet ──► Route 53 (DNS) ──► EC2 (Harbor + SSL)
   - Go to https://harbor.(your-domain)
   - Goto Administration>Users>+New User
   - Goto Projects. Create New Project if you want to push your images under one repo
-    <Picture>
+  
+   ![new-user](Pictures/harbor-new-user.png)
 
           
 - **🐳 Push Docker Images to Harbor**
@@ -106,7 +111,8 @@ Internet ──► Route 53 (DNS) ──► EC2 (Harbor + SSL)
        ```
        ***(Repeat for other images: ratings, reviews-v1/v2/v3, productpage)***
      - Should be as below
-       <Picture>
+
+     ![images](Pictures/bookinfo-images.png)
 
 - **☸️ Deploy Bookinfo on Kubernetes (Tested on Local VM)**
 
