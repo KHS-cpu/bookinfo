@@ -33,7 +33,7 @@ Internet ──► Route 53 (DNS) ──► EC2 (Harbor + SSL)
 
 ---
 
-## ✅ Pre-requisites
+## Pre-requisites
 - AWS account with access to EC2 and Route 53
 
 - A registered domain name in Route 53
