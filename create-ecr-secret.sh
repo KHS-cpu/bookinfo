@@ -8,8 +8,8 @@ kubectl create ns productpage
 for ns in details reviews productpage ratings; do
   kubectl create secret docker-registry harbor-secret \
     --docker-server=harbor.kaunghtetsan.tech \
-    --docker-username=khs \
-    --docker-password=Harbor12345 \
+    --docker-username=<Username> \
+    --docker-password=<Password> \
     -n $ns
 done
 
