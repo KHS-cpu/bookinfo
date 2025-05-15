@@ -58,7 +58,7 @@ This is the bookinfo architecture
 
    2. Obtain and configure SSL certificates:
 
-      - You can use Let's Encrypt, ZeroSSL, or your internal CA. Here I use this terraform to create acme certificate with Route 53.
+      - You can use Let's Encrypt, ZeroSSL, or your internal CA. Here I use this terraform code to create acme certificate with Route 53.
         - (https://github.com/sailinnthu/terraform-acme-tls-aws)
         - You need to install terraform and aws cli and also need to attach Route 53 role to that EC2 and run terraform to create ACME certificate with your desired domain.
         - After running terraform you can see below there will be cert files.
